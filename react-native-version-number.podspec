@@ -2,7 +2,6 @@ require 'json'
 package_json = JSON.parse(File.read('package.json'))
 
 Pod::Spec.new do |s|
-
   s.name           = "react-native-version-number"
   s.version        = package_json["version"]
   s.summary        = package_json["description"]
@@ -12,6 +11,4 @@ Pod::Spec.new do |s|
   s.platform       = :ios, "7.0"
   s.source         = { :git => "#{package_json["repository"]["url"]}.git", :tag => "v#{s.version}" }
   s.source_files   = 'ios/*.{h,m}'
-  s.dependency 'React'
-
 end
